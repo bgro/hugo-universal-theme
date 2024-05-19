@@ -121,7 +121,7 @@ function sliders () {
       slideSpeed: ($('.homepage').attr('data-slide-speed') || 2000),
       paginationSpeed: ($('.homepage').attr('data-pagination-speed') || 1000),
       autoPlay: ($('.homepage').attr('data-autoplay') || 'true') === 'true',
-      stopOnHover: true,
+      stopOnHover: false,
       singleItem: true,
       lazyLoad: false,
       addClassActive: true,

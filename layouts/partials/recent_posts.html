@@ -23,6 +23,8 @@
                             <div class="image" style="overflow:hidden">
                                 {{ if isset .Params "banner" }}
                                 <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="" >
+                                {{ else if .Params.local_banner}}
+                                <img src="{{ .Permalink}}/{{ .Params.local_banner  }}" class="img-responsive" alt="">
                                 {{ else }}
                                 <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="">
                                 {{ end }}

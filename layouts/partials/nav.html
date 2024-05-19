@@ -23,7 +23,6 @@
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
                   {{ $current := . }}
-
                   {{ range .Site.Menus.main.ByWeight }}
                   {{ $topLevel := replace .URL "/" "" }}
                   {{ $active := "" }}
