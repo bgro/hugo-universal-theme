@@ -68,7 +68,7 @@
   translation: "Älter"
 
 - id: publishedOn
-  translation: "am"
+  translation: "vom"
 
 - id: 404Error
   translation: "Fehler 404: Seite nicht gefunden"

@@ -36,13 +36,16 @@
                               {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
                                   {{ $createdAt = replace $createdAt $month (i18n $month) }}
                               {{ end }}
-                              {{ $createdAt }}
+                              {{ i18n "publishedOn" }} {{ $createdAt }}
                             {{ end }}
                           </p>
                         {{ end }}
 
                         <div id="post-content">
                           {{ .Content }}
+                          {{ if .Params.termin_date }}
+                          <p> {{ .Params.termin_date }} ({{ .Params.termin_ort }})</p>
+                          {{ end }}
                         </div>
                         <!-- /#post-content -->
                         {{ if .Site.DisqusShortname }}
