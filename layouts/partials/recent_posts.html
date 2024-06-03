@@ -48,7 +48,7 @@
                                 {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
                                     {{ $createdAt = replace $createdAt $month (i18n $month) }}
                                 {{ end }}
-                                {{ i18n "publishedOn" }} {{ $createdAt }}
+                                <!-- {{ i18n "publishedOn" }} {{ $createdAt }} -->
                             {{ end }}
                             </p>
                             {{ if not .Site.Params.recent_posts.hide_summary }}
