@@ -2,7 +2,7 @@
   translation: "Home"
 
 - id: templateBy
-  translation: "Design durch"
+  translation: "Template:"
 
 - id: portedBy
   translation: "Portiert nach Hugo durch"
@@ -68,7 +68,7 @@
   translation: "Älter"
 
 - id: publishedOn
-  translation: "am"
+  translation: ""
 
 - id: 404Error
   translation: "Fehler 404: Seite nicht gefunden"

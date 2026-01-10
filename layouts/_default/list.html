@@ -16,6 +16,7 @@
 
         {{ partial "breadcrumbs.html" . }}
 
+
         <div id="content">
             <div class="container">
                 <div class="row">
@@ -31,7 +32,9 @@
                                   <div class="image">
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
-                                          <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="" />
+                                          <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="">
+                                          {{ else if .Params.local_banner}}
+                                          <img src="{{ .Permalink}}/{{ .Params.local_banner | relURL }}" class="img-responsive" alt="">
                                           {{ else }}
                                           <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="" />
                                           {{ end }}
@@ -61,16 +64,31 @@
                                             {{ $createdAt = replace $createdAt $month (i18n $month) }}
                                         {{ end }}
 
-                                        <p class="date-comments">
+                                        <!--p class="date-comments">
                                             <a href="{{ .Permalink }}"><i class="far fa-calendar"></i> {{ $createdAt }}</a>
-                                        </p>
+                                        </p-->
+
+                            
                                         {{ end }}
                                     </div>
-                                    {{ if not .Site.Params.recent_posts.hide_summary }}
+                                    {{ if not .Site.Params.posts_list.hide_summary }}
+                                        {{ if .Params.termin_date }}
+                                        <p class="intro">{{ .Params.termin_date }} ({{ .Params.termin_ort }})</p>
+                                        </p> 
+                                        {{ end }}
                                     <p class="intro">{{ .Summary }}</p>
+
                                     <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
                                     </p>
                                     {{ end }}
+
+                                    <!--
+                                    {{ if .Params.termin_kurz }}
+                                    <p class="intro">{{ .Params.termin_kurz }}</p>
+                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
+                                    </p> 
+                                    {{ end }} -->
+
                                 </div>
                             </div>
                         </section>
